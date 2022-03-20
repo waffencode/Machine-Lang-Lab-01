@@ -41,7 +41,6 @@ int main(void) {
 			puts("Введите c:");
 			scanf("%hhu", &uc_c);
 			asm_calculate_result_unsigned_char();
-			printf("%hhu", ucr);
 			printf("Вычисленные значения (ASM):\n Числитель: %hhu, знаменатель: %hhu, результат: %hhu\n", uc_num, uc_denom, ucr);
 			printf("Контрольные значения (C):\n Числитель: %hhu, знаменатель: %hhu, результат: %hhu\n", (55 - uc_b + uc_a), (-88 / uc_c + 1), (55 - uc_b + uc_a) / (-88 / uc_c + 1));
 
