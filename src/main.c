@@ -3,8 +3,8 @@
 
 signed char sc_a = 0, sc_b = 0, sc_c = 0, scr = 0, sc_num = 0, sc_denom = 0;
 unsigned char uc_a = 0, uc_b = 0, uc_c = 0, ucr = 0, uc_num = 0, uc_denom = 0;
-int si_a = 0, si_b = 0, si_c = 0, sir = 0, si_num = 0, si_denom = 0;
-unsigned int ui_a = 0, ui_b = 0, ui_c = 0, uir = 0, ui_num = 0, ui_denom = 0;
+signed short int si_a = 0, si_b = 0, si_c = 0, sir = 0, si_num = 0, si_denom = 0;
+unsigned short int ui_a = 0, ui_b = 0, ui_c = 0, uir = 0, ui_num = 0, ui_denom = 0;
 
 int type = 0;
 
@@ -49,28 +49,28 @@ int main(void) {
 		case 3: {
 			puts("Ограничение: -2147483648 <= a, b, c <= 2147483467");
 			puts("Введите a:");
-			scanf("%d", &si_a);
+			scanf("%hd", &si_a);
 			puts("Введите b:");
-			scanf("%d", &si_b);
+			scanf("%hd", &si_b);
 			puts("Введите c:");
-			scanf("%d", &si_c);
+			scanf("%hd", &si_c);
 			asm_calculate_result_signed_int();
-			printf("Вычисленные значения (ASM):\n Числитель: %d, знаменатель: %d, результат: %d\n", si_num, si_denom, sir);
-			printf("Контрольные значения (C):\n Числитель: %d, знаменатель: %d, результат: %d\n", (55 - si_b + si_a), (-88 / si_c + 1), (55 - si_b + si_a) / (-88 / si_c + 1));
+			printf("Вычисленные значения (ASM):\n Числитель: %hd, знаменатель: %hd, результат: %hd\n", si_num, si_denom, sir);
+			printf("Контрольные значения (C):\n Числитель: %hd, знаменатель: %hd, результат: %hd\n", (55 - si_b + si_a), (-88 / si_c + 1), (55 - si_b + si_a) / (-88 / si_c + 1));
 
 			break;
 		}
 		case 4: {
 			puts("Ограничение: 0 <= a, b, c <= 4294967295");
 			puts("Введите a:");
-			scanf("%u", &ui_a);
+			scanf("%hu", &ui_a);
 			puts("Введите b:");
-			scanf("%u", &ui_b);
+			scanf("%hu", &ui_b);
 			puts("Введите c:");
-			scanf("%u", &ui_c);
+			scanf("%hu", &ui_c);
 			asm_calculate_result_unsigned_int();
-			printf("Вычисленные значения (ASM):\n Числитель: %u, знаменатель: %u, результат: %u\n", ui_num, ui_denom, uir);
-			printf("Контрольные значения (C):\n Числитель: %u, знаменатель: %u, результат: %u\n", (55 - ui_b + ui_a), (-88 / ui_c + 1), (55 - ui_b + ui_a) / (-88 / ui_c + 1));
+			printf("Вычисленные значения (ASM):\n Числитель: %hu, знаменатель: %hu, результат: %hu\n", ui_num, ui_denom, uir);
+			printf("Контрольные значения (C):\n Числитель: %hu, знаменатель: %hu, результат: %hu\n", (55 - ui_b + ui_a), (-88 / ui_c + 1), (55 - ui_b + ui_a) / (-88 / ui_c + 1));
 
 			break;
 		}

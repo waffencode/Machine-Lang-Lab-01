@@ -77,41 +77,41 @@ ret
 asm_calculate_result_signed_int:
 	xor eax, eax
 	xor ebx, ebx
-	mov eax, [si_b]		; eax <- si_b
-	neg eax			; eax <- -si_b
-	add eax, 55		; eax <- 55 - si_b
-	add eax, [si_a]		; eax <- 55 - si_b + si_a
-	mov [si_num], eax 	; si_num <- 55 - si_b + si_a
-	mov ebx, [si_c]		; ebx <- si_c
-	mov eax, -88		; eax <- -88
-	cdq			 
-	idiv ebx		; eax <- -88 / si_c
-	inc eax			; eax <- -88 / si_c + 1
-	mov [si_denom], eax	; si_denom <- -88 / si_c + 1
-	mov eax, [si_num]	; eax <- 55 - si_b + si_a
-	mov ebx, [si_denom]	; ebx <- -88 / si_c + 1
-	cdq
-	idiv ebx		; eax <- (55 - si_b + si_a) / (-88 / si_c + 1)
-	mov [sir], eax		; sir <- (55 - si_b + si_a) / (-88 / si_c + 1)
+	mov ax, [si_b]		; ax <- si_b
+	neg ax			; ax <- -si_b
+	add ax, 55		; ax <- 55 - si_b
+	add ax, [si_a]		; ax <- 55 - si_b + si_a
+	mov [si_num], ax 	; si_num <- 55 - si_b + si_a
+	mov bx, [si_c]		; bx <- si_c
+	mov ax, -88		; ax <- -88
+	cwd			 
+	idiv bx			; ax <- -88 / si_c
+	inc ax			; ax <- -88 / si_c + 1
+	mov [si_denom], ax	; si_denom <- -88 / si_c + 1
+	mov ax, [si_num]	; ax <- 55 - si_b + si_a
+	mov bx, [si_denom]	; bx <- -88 / si_c + 1
+	cwd
+	idiv bx			; ax <- (55 - si_b + si_a) / (-88 / si_c + 1)
+	mov [sir], ax		; sir <- (55 - si_b + si_a) / (-88 / si_c + 1)
 ret
 asm_calculate_result_unsigned_int:
 	xor eax, eax
 	xor ebx, ebx
-	mov eax, [ui_b]		; eax <- ui_b
-	neg eax			; eax <- -ui_b
-	add eax, 55		; eax <- 55 - ui_b
-	add eax, [ui_a]		; eax <- 55 - ui_b + ui_a
-	mov [ui_num], eax 	; ui_num <- 55 - ui_b + ui_a
-	mov ebx, [ui_c]		; ebx <- ui_c
-	mov eax, -88		; eax <- -88
-	cdq			 
-	idiv ebx		; eax <- -88 / ui_c
-	inc eax			; eax <- -88 / ui_c + 1
-	mov [ui_denom], eax	; ui_denom <- -88 / ui_c + 1
-	mov eax, [ui_num]	; eax <- 55 - ui_b + ui_a
-	mov ebx, [ui_denom]	; ebx <- -88 / ui_c + 1
-	cdq
-	idiv ebx		; eax <- (55 - ui_b + ui_a) / (-88 / ui_c + 1)
-	mov [uir], eax		; uir <- (55 - ui_b + ui_a) / (-88 / ui_c + 1)
+	mov ax, [ui_b]		; ax <- ui_b
+	neg ax			; ax <- -ui_b
+	add ax, 55		; ax <- 55 - ui_b
+	add ax, [ui_a]		; ax <- 55 - ui_b + ui_a
+	mov [ui_num], ax 	; ui_num <- 55 - ui_b + ui_a
+	mov bx, [ui_c]		; bx <- ui_c
+	mov ax, -88		; ax <- -88
+	cwd			 
+	idiv bx			; ax <- -88 / ui_c
+	inc ax			; ax <- -88 / ui_c + 1
+	mov [ui_denom], ax	; ui_denom <- -88 / ui_c + 1
+	mov ax, [ui_num]	; ax <- 55 - ui_b + ui_a
+	mov bx, [ui_denom]	; bx <- -88 / ui_c + 1
+	cwd
+	idiv bx			; ax <- (55 - ui_b + ui_a) / (-88 / ui_c + 1)
+	mov [uir], ax		; uir <- (55 - ui_b + ui_a) / (-88 / ui_c + 1)
 
 ret
