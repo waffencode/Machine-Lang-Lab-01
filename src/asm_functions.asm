@@ -35,6 +35,8 @@ section .data
 
 section .text
 asm_calculate_result_signed_char:
+	xor eax, eax
+	xor ebx, ebx
 	mov al, [sc_b]		; al <- sc_b
 	neg al			; al <- -sc_b
 	add al, 55		; al <- 55 - sc_b
@@ -53,6 +55,8 @@ asm_calculate_result_signed_char:
 	mov [scr], al		; scr <- (55 - sc_b + sc_a) / (-88 / sc_c + 1)
 ret
 asm_calculate_result_unsigned_char:
+	xor eax, eax
+	xor ebx, ebx
 	mov al, [uc_b]		; al <- uc_b
 	neg al			; al <- -uc_b
 	add al, 55		; al <- 55 - uc_b
@@ -71,6 +75,8 @@ asm_calculate_result_unsigned_char:
 	mov [ucr], al		; ucr <- (55 - uc_b + uc_a) / (-88 / uc_c + 1)
 ret
 asm_calculate_result_signed_int:
+	xor eax, eax
+	xor ebx, ebx
 	mov eax, [si_b]		; eax <- si_b
 	neg eax			; eax <- -si_b
 	add eax, 55		; eax <- 55 - si_b
@@ -89,6 +95,8 @@ asm_calculate_result_signed_int:
 	mov [sir], eax		; sir <- (55 - si_b + si_a) / (-88 / si_c + 1)
 ret
 asm_calculate_result_unsigned_int:
+	xor eax, eax
+	xor ebx, ebx
 	mov eax, [ui_b]		; eax <- ui_b
 	neg eax			; eax <- -ui_b
 	add eax, 55		; eax <- 55 - ui_b
