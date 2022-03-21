@@ -15,5 +15,5 @@ Source code is stored in `src` directory. Object files usedfor compiling are sto
 There is custom prefixes system used in project. Here is a meaning of prefixes:
 * `sc = signed char`
 * `uc = unsigned char`
-* `si = signed int`
-* `ui = unsigned int`
+* `si = signed short int`
+* `ui = unsigned short int`
