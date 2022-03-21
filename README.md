@@ -8,7 +8,7 @@ The task is to calculate the value of given expression for signed and unsigned f
 
 ## Directories
 
-Source code is stored in `src` directory. Object files usedfor compiling are stored in `obj` directory. Makefile is stored in `build` directory. Executable file is stored in `bin` directory.
+Source code is stored in `src` directory. Object files used for compiling are stored in `obj` directory. Makefile is stored in `build` directory. Executable file is stored in `bin` directory.
 
 ## Variable Prefixes
 
